@@ -12,10 +12,12 @@ const app = createApp({
     computed: {},
     methods: {
         goNextImg() {
-            this.activeIndex++;
+            if (this.activeIndex < 4) this.activeIndex++;
+            else this.activeIndex = 0;
         },
         goPrevImg() {
-            this.activeIndex--;
+            if (this.activeIndex > 0) this.activeIndex--;
+            else this.activeIndex = 4;
         }
     }
 });
