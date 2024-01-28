@@ -19,6 +19,9 @@
   <!-- Style -->
   <link rel="stylesheet" href="css/style.css" />
 
+  <!-- Vue -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
   <!-- JavaScript -->
   <script src="js/data.js"></script>
   <script defer src="js/script.js"></script>
@@ -27,19 +30,19 @@
 
 <body>
 
-  <div class="container">
+  <div class="container" id="root">
     <div id="carousel">
       <!-- Prev button -->
       <i id="prev-button" class="bi bi-arrow-left-circle-fill" role="button"></i>
 
       <!-- Gallery -->
-      <div class="gallery">
-        <figure class="active">
+      <div class="gallery" v-for="(destination, i) in destinations">
+        <figure :class="activeIndex === i ? 'active' : ''">
           <figcaption>
-            <h2>Svezia</h2>
-            <h3>Scandinavia's blend of nature and innovation.</h3>
+            <h2>{{destination.name}}</h2>
+            <h3>{{destination.description}}</h3>
           </figcaption>
-          <img src="img/01.jpg" alt="Svezia">
+          <img :src="`img/${destination.image}`" :alt="`${destination.name}`">
         </figure>
       </div>
 
@@ -49,7 +52,8 @@
 
     <!-- Thumbnails -->
     <div id="thumbnails">
-      <img src="img/01.jpg" alt="Svezia" class="active">
+      <img :src="`img/${destination.image}`" :alt="`${destination.name}`" :class="activeIndex === i ? 'active' : ''"
+        v-for="(destination, i) in destinations">
     </div>
 
     <!-- <div class="autoplay-controls">
