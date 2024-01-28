@@ -18,6 +18,9 @@ const app = createApp({
         goPrevImg() {
             if (this.activeIndex > 0) this.activeIndex--;
             else this.activeIndex = 4;
+        },
+        setImg(i) {
+            this.activeIndex = i;
         }
     }
 });

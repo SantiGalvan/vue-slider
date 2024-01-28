@@ -53,7 +53,7 @@
     <!-- Thumbnails -->
     <div id="thumbnails">
       <img :src="`img/${destination.image}`" :alt="`${destination.name}`" :class="activeIndex === i ? 'active' : ''"
-        v-for="(destination, i) in destinations">
+        v-for="(destination, i) in destinations" @click="setImg(i)">
     </div>
 
     <!-- <div class="autoplay-controls">
