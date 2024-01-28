@@ -13,6 +13,9 @@ const app = createApp({
     methods: {
         goNextImg() {
             this.activeIndex++;
+        },
+        goPrevImg() {
+            this.activeIndex--;
         }
     }
 });
