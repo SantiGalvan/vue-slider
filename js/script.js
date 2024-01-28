@@ -10,6 +10,10 @@ const app = createApp({
         }
     },
     computed: {},
-    methods: {}
+    methods: {
+        goNextImg() {
+            this.activeIndex++;
+        }
+    }
 });
 app.mount('#root');

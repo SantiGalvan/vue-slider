@@ -36,8 +36,8 @@
       <i id="prev-button" class="bi bi-arrow-left-circle-fill" role="button"></i>
 
       <!-- Gallery -->
-      <div class="gallery" v-for="(destination, i) in destinations">
-        <figure :class="activeIndex === i ? 'active' : ''">
+      <div class="gallery">
+        <figure v-for="(destination, i) in destinations" :class="activeIndex === i ? 'active' : ''">
           <figcaption>
             <h2>{{destination.name}}</h2>
             <h3>{{destination.description}}</h3>
@@ -47,7 +47,7 @@
       </div>
 
       <!-- next button -->
-      <i id="next-button" class="bi bi-arrow-right-circle-fill" role="button"></i>
+      <i id="next-button" class="bi bi-arrow-right-circle-fill" role="button" @click="goNextImg"></i>
     </div>
 
     <!-- Thumbnails -->
